@@ -4,7 +4,9 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
-// TODO: Replace with your actual Firebase config
+// ⚠️ IMPORTANT: Replace these values with your own Firebase project configuration!
+// The values below are example values and should be replaced with your actual Firebase project details.
+// Get your config from: Firebase Console > Project Settings > General > Your apps
 const firebaseConfig = {
   apiKey: "AIzaSyBNNLBpHs-53fVJw9Lpt4xyw_8qWt4OwOY",
   authDomain: "gpacalculator-ef602.firebaseapp.com",
