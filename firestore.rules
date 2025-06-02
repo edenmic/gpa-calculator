@@ -1,0 +1,23 @@
+// Firestore Security Rules
+// עתק את הכללים האלה ל-Firebase Console -> Firestore Database -> Rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Rules for degrees collection
+    match /degrees/{degreeId} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Rules for courses collection
+    match /courses/{courseId} {
+      allow read, write: if request.auth != null && 
+        exists(/databases/$(database)/documents/degrees/$(resource.data.degreeId)) &&
+        get(/databases/$(database)/documents/degrees/$(resource.data.degreeId)).data.userId == request.auth.uid;
+      allow create: if request.auth != null && 
+        exists(/databases/$(database)/documents/degrees/$(request.resource.data.degreeId)) &&
+        get(/databases/$(database)/documents/degrees/$(request.resource.data.degreeId)).data.userId == request.auth.uid;
+    }
+  }
+}
