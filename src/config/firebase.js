@@ -8,12 +8,12 @@ import { getFirestore } from 'firebase/firestore';
 // The values below are example values and should be replaced with your actual Firebase project details.
 // Get your config from: Firebase Console > Project Settings > General > Your apps
 const firebaseConfig = {
-  apiKey: "AIzaSyBNNLBpHs-53fVJw9Lpt4xyw_8qWt4OwOY",
-  authDomain: "gpacalculator-ef602.firebaseapp.com",
-  projectId: "gpacalculator-ef602",
-  storageBucket: "gpacalculator-ef602.firebasestorage.app",
-  messagingSenderId: "192888248882",
-  appId: "1:192888248882:web:e7417b992e498089a7ba2b",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBNNLBpHs-53fVJw9Lpt4xyw_8qWt4OwOY",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "gpacalculator-ef602.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "gpacalculator-ef602",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "gpacalculator-ef602.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "192888248882",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:192888248882:web:e7417b992e498089a7ba2b",
 };
 
 // Initialize Firebase
