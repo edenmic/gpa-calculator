@@ -7,6 +7,14 @@ import { getFirestore } from 'firebase/firestore';
 // ⚠️ IMPORTANT: Replace these values with your own Firebase project configuration!
 // The values below are example values and should be replaced with your actual Firebase project details.
 // Get your config from: Firebase Console > Project Settings > General > Your apps
+
+// Debug: Log environment variables to check if they're loaded
+console.log('Environment variables check:', {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY ? 'Found' : 'Missing',
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ? 'Found' : 'Missing',
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID ? 'Found' : 'Missing',
+});
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBNNLBpHs-53fVJw9Lpt4xyw_8qWt4OwOY",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "gpacalculator-ef602.firebaseapp.com",
