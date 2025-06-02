@@ -417,10 +417,12 @@ export const DegreesProvider = ({ children }) => {
     updateDegreeStats,
     calculateDegreeStats
   };
-
   return (
     <DegreesContext.Provider value={value}>
       {children}
     </DegreesContext.Provider>
   );
 };
+
+// Export the context for components that need direct access
+export { DegreesContext };

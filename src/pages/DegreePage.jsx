@@ -19,6 +19,8 @@ import EditCourseDialog from '../components/EditCourseDialog';
 import DeleteCourseDialog from '../components/DeleteCourseDialog';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorAlert from '../components/ErrorAlert';
+// Export component only
+import ExportData from '../components/ExportData';
 import { 
   ArrowLeft, 
   Plus, 
@@ -276,10 +278,13 @@ const DegreePage = () => {
               })()}
               <p className="text-sm text-gray-500 mt-2">
                 {currentStats.completedCredits} מתוך {degree.totalCredits} נק"ז
-              </p>
-            </CardContent>
-          </Card>
-        </div>        {/* Courses Section */}
+              </p>            </CardContent>
+          </Card>        </div>
+
+        {/* Export Data */}
+        <ExportData degreeId={degreeId} />
+
+        {/* Courses Section */}
         <Card>
           <CardHeader>
             <div className="flex justify-between items-center">
